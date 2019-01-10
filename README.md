@@ -1,7 +1,11 @@
 # cake-mobile-apps
-Kelompok 1 (Ardiono Roma, Linda Handayani, Nico Ariesto Gilani)
 
-[Test Image 1](https://github.com/SMTI-08/cake-mobile-apps/blob/master/Test%20Image%201.png)
+
+<p align="center">
+  <img width="230" height="400" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/Test%20Image%201.png">
+</p>
+
+
 
 Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi mengenai pengetahuan dan perkembangan saham perusahaan. Aplikasi ini digunakan untuk membantu investor pemula untuk melakukan analisis dalam mengambil keputusan dan meminimalisasi resiko kerugian saat melakukan investasi. Fitur utama pada aplikasi ini adalah analisis dengan menggunakan metode valuasi yaitu Free Cash Flow to Equity (FCFE) & Free Cash Flow to Equity (FCFF) dengan perkembangan data 5 tahun terakhir. Data yang digunakan pada aplikasi ini berasal dari data perusahaan blue chips yang disediakan berdasarkan sembilan sektor usaha. 
 
