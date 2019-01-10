@@ -13,7 +13,7 @@ Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi men
 
 #To-dos
 *(19 November 2018)*
-- [x] Diskusi dengan stakeholder
+- [x] Diskusi dengan stakeholder (dokumentasi MoM 1)
 
 *(22 November 2018 - 29 November 2018)*
 - [x] Perencanaan proyek aplikasi
@@ -30,9 +30,10 @@ Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi men
 - [x] Membuat metode pengembangan aplikasi
 
 *(18 Desember 2018 - 27 Desember 2019)*
-- [x] Membuat Desain aplikasi
+- [x] Membuat Desain aplikasi (dokumentasi https://marvelapp.com/ae9g770)
 - [x] Membuat Outline sistem
 
-*(28 Desember 2018 - 09 Januari 2019)*
+*(28 Desember 2018 - 9 Januari 2019)*
+- [x] Diskusi dengan stakeholder (dokumentasi MoM 2)
 - [ ] Implementasi dan Koding
 - [ ] Dokumentasi Fungsi dan User Manual
