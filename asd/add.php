@@ -10,15 +10,15 @@ include_once("config.php");
 	<a href="index.php">Home</a>
 	<br/><br/>
 
-	<form action="add1.php" method="post" name="form1">
+	<form action="add1.php" method="post" name="form1" enctype="multipart/form-data">
 		<table width="25%" border="0">
 			<tr> 
 				<td>Kode Bursa</td>
-				<td><input type="text" name="nama_perusahaan"></td>
+				<td><input type="text" name="kode_bursa"></td>
 			</tr>
 			<tr> 
 				<td>Nama Perusahaan</td>
-				<td><input type="text" name="kode_bursa"></td>
+				<td><input type="text" name="nama_perusahaan"></td>
 			</tr>
 			<tr> 
 				<td>Sektor Perusahaan</td>
@@ -30,6 +30,10 @@ include_once("config.php");
 						}
 					?>
 				</select></td>
+			</tr>
+			<tr>
+				<td>Foto</td>
+				<td><input type="file" name="Photo"></td>
 			</tr>
 			<tr> 
 				<td></td>

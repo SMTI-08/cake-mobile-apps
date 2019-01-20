@@ -28,6 +28,17 @@ while($res = mysqli_fetch_array($result))
 				<td>Nama Perusahaan</td>
 				<td><input type="text" name="nama_perusahaan" value="<?php echo $name;?>"></td>
 			</tr>
+			<tr> 
+				<td>Sektor Perusahaan</td>
+				<td><select name="sektor">
+					<?php
+						$sql = mysqli_query($mysqli, "SELECT * FROM sektor");
+						while ($row = $sql->fetch_assoc()) {
+							echo "<option value=\"".$row['id']."\">".$row['nama_sektor']."</option>";
+						}
+					?>
+				</select></td>
+			</tr>
 			<tr>
 				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
 				<td><input type="submit" name="update" value="Update"></td>
@@ -41,13 +52,19 @@ if(isset($_POST['update']))
 {	
 	$id = $_POST['id'];
 	$name = mysqli_real_escape_string($mysqli, $_POST['nama_perusahaan']);
+	$sektor = mysqli_real_escape_string($mysqli, $_POST['sektor']);
 	
 	// checking empty fields
-	if(empty($name)) {
-		echo "<font color='red'>nama_perusahaan field is empty.</font><br/>";
+	if(empty($name) || empty($sektor)) {
+		if (empty($name)) {
+			echo "<font color='red'>nama_perusahaan field is empty.</font><br/>";
+		}
+		if (empty($sektor)) {
+			echo "<font color='red'>sektor field is empty.</font><br/>";
+		}
 	} else {	
 		//updating the table
-		$result = mysqli_query($mysqli, "UPDATE company SET nama_perusahaan='$name' WHERE kode_bursa='$id'");
+		$result = mysqli_query($mysqli, "UPDATE company SET nama_perusahaan='$name',sektor='$sektor' WHERE kode_bursa='$id'");
 		
 		//redirectig to the display page. In our case, it is index.php
 		header("Location: index.php");

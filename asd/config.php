@@ -14,7 +14,7 @@ $conn = mysql_connect("localhost","root","root")
  */
 
 $databaseHost = 'localhost';
-$databaseName = 'cakemobile';
+$databaseName = 'cakeapps';
 $databaseUsername = 'root';
 $databasePassword = '';
 
