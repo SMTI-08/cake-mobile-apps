@@ -1,6 +1,7 @@
 <?php
 	include_once("config.php");
 	require "Company.php";
+	date_default_timezone_set("Asia/Bangkok");
 
 	//$id = $_GET['id'];
 	$result = mysqli_query($mysqli, "SELECT * FROM kurs WHERE id_kurs=1");
