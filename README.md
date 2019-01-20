@@ -12,6 +12,7 @@ Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi men
 
 
 #To-dos
+
 *(19 November 2018)*
 - [x] Diskusi dengan stakeholder (dokumentasi MoM 1)
 
@@ -37,3 +38,17 @@ Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi men
 - [x] Diskusi dengan stakeholder (dokumentasi MoM 2)
 - [ ] Implementasi dan Koding
 - [ ] Dokumentasi Fungsi dan User Manual
+
+#Timeline Schedule
+
+<p align="center">
+  <img width="500" height="300" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/Timeline%20Schedule.png">
+</p>
+
+#RACI Matriks
+
+<p align="center">
+  <img width="600" height="500" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/Raci%20Matriks.png">
+</p>
+
+*Dokumentasi selengkapnya terdapat di file dokumentasi.pdf*
