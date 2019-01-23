@@ -1,0 +1,3 @@
+[submodule "CAKeMobile"]
+	path = CAKeMobile
+	url = https://github.com/ardionoroma/CAKeMobile.git
