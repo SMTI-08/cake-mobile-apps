@@ -51,4 +51,7 @@ Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi men
   <img width="600" height="500" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/Raci%20Matriks.png">
 </p>
 
-*Dokumentasi selengkapnya terdapat di file dokumentasi.pdf*
+Dokumentasi selengkapnya terdapat di file [Project Documentation](https://github.com/SMTI-08/cake-mobile-apps/blob/master/Project%20Documentation.pdf).
+
+Timeline Project Plan dan Timeline Project Actual di file [Critical Path](https://github.com/SMTI-08/cake-mobile-apps/blob/master/Critical%20path.xlsx).
+
