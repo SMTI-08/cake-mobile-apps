@@ -2,11 +2,9 @@
 
 
 <p align="center">
-  <img width="230" height="400" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/Test%20Image%201.png">
+  <img width="230" height="400" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/image/Test%20Image%201.png">
 </p>
 
-<h2>Prototype</h2>
-<a align="center" href="https://marvelapp.com/ae9g770">Prototype</a>
 
 <br>
 
@@ -46,15 +44,15 @@ Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi men
 #Timeline Schedule
 
 <p align="center">
-  <img width="500" height="300" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/Timeline%20Schedule.png">
+  <img width="500" height="300" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/image/Timeline%20Schedule.png">
 </p>
 
 #RACI Matriks
 
 <p align="center">
-  <img width="600" height="500" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/Raci%20Matriks.png">
+  <img width="600" height="500" src="https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/image/Raci%20Matriks.png">
 </p>
 
-Dokumentasi selengkapnya terdapat di file [Project Documentation](https://github.com/SMTI-08/cake-mobile-apps/blob/master/Project%20Documentation.pdf).
+Dokumentasi selengkapnya terdapat di file [Project Documentation](https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/Project%20Documentation.pdf).
 
-Timeline Project Plan dan Timeline Project Actual di file [Critical Path](https://github.com/SMTI-08/cake-mobile-apps/blob/master/Critical%20path.xlsx).
+Timeline Project Plan dan Timeline Project Actual di file [Plan-Actual-Critical Scheduling](https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/Plan-Actual-Critical%20Scheduling.xlsx).
