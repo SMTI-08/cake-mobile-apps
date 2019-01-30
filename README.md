@@ -1,4 +1,4 @@
-# cake-mobile-apps
+# CAKeApps Mobile
 
 
 <p align="center">
@@ -9,7 +9,7 @@
 <br>
 
 <h2>Deskripsi</h2>
-Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi mengenai pengetahuan dan perkembangan saham perusahaan. Aplikasi ini digunakan untuk membantu investor pemula untuk melakukan analisis dalam mengambil keputusan dan meminimalisasi resiko kerugian saat melakukan investasi. Fitur utama pada aplikasi ini adalah analisis dengan menggunakan metode valuasi yaitu Free Cash Flow to Equity (FCFE) & Free Cash Flow to Equity (FCFF) dengan perkembangan data 5 tahun terakhir. Data yang digunakan pada aplikasi ini berasal dari data perusahaan blue chips yang disediakan berdasarkan sembilan sektor usaha. 
+CAKeApps Mobile merupakan sebuah aplikasi android yang memberikan informasi mengenai pengetahuan dan perkembangan saham perusahaan.Aplikasi ini digunakan untuk membantu investor pemula untuk melakukan analisis dalam mengambil keputusan dan meminimalisasi resiko kerugian saat melakukan investasi. Fitur utama pada aplikasi ini adalah analisis dengan menggunakan metode valuasi yaitu FCFE (Free Cash Flow to Equity) dan FCFF(Free Cash Flow to Firm. Data yang digunakan pada aplikasi berasal dari data perusahaan blue chips yang disediakan berdasarkan sembilan sektor usaha.
 
 <br>
 
@@ -38,8 +38,8 @@ Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi men
 
 *(28 Desember 2018 - 9 Januari 2019)*
 - [x] Diskusi dengan stakeholder (dokumentasi MoM 2)
-- [ ] Implementasi dan Koding
-- [ ] Dokumentasi Fungsi dan User Manual
+- [x] Implementasi dan Koding
+- [x] Dokumentasi Fungsi dan User Manual
 
 #Timeline Schedule
 
@@ -56,3 +56,7 @@ Cake Mobile Apps merupakan aplikasi mobile android yang memberikan informasi men
 Dokumentasi selengkapnya terdapat di file [Project Documentation](https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/Project%20Documentation.pdf).
 
 Timeline Project Plan dan Timeline Project Actual di file [Plan-Actual-Critical Scheduling](https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/Plan-Actual-Critical%20Scheduling.xlsx).
+
+Panduan penggunaan aplikasi terdapat di file [User Manual](https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/User%20Manual.pdf).
+
+
