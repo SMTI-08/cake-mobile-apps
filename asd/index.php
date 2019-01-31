@@ -1,10 +1,8 @@
 <?php
-//including the database connection file
 include_once("config.php");
 
-//fetching data in descending order (lastest entry first)
-//$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-$result = mysqli_query($mysqli, "SELECT company.id_company, company.name_company, company.desc_company, sector.name_sector, company.image, company.stock_price, company.beta, company.using_dollar, company.current_asset1, company.current_asset2, company.current_l1, company.current_l2, company.outstanding_share, company.total_equity, company.net_income, company.capital_expenditure, company.depreciation, company.dividend_payment, company.total_l12, company.interest_expense, company.ebit, company.eps, company.new_debt_issued, company.debt_repayment FROM company INNER JOIN sector ON company.id_sector = sector.id_sector ORDER BY id_company"); // using mysqli_query instead
+//Kueri data untuk ditampilkan di home, menggunakan JOIN karena ada data yang berasal dari tabel sector
+$result = mysqli_query($mysqli, "SELECT company.id_company, company.name_company, company.desc_company, sector.name_sector, company.image, company.stock_price, company.beta, company.using_dollar, company.current_asset1, company.current_asset2, company.current_l1, company.current_l2, company.outstanding_share, company.total_equity, company.net_income, company.capital_expenditure, company.depreciation, company.dividend_payment, company.total_l12, company.interest_expense, company.ebit, company.eps, company.new_debt_issued, company.debt_repayment FROM company INNER JOIN sector ON company.id_sector = sector.id_sector ORDER BY id_company");
 ?>
 
 <html>
@@ -45,13 +43,14 @@ $result = mysqli_query($mysqli, "SELECT company.id_company, company.name_company
 		<td>Update</td>
 	</tr>
 	<?php 
-	//while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array 
+	//Memuat data hasil kueri
 	while($res = mysqli_fetch_array($result)) { 		
 		echo "<tr>";
 		echo "<td>".$res['id_company']."</td>";
 		echo "<td>".$res['name_company']."</td>";
 		echo "<td>".$res['desc_company']."</td>";
 		echo "<td>".$res['name_sector']."</td>";
+		//Logo perusahaan yang ditampilkan maksimal selebar 100px
 		echo "<td><img src=\"img/".$res['image']."\" width=\"100px\"/></td>";
 		echo "<td>".$res['stock_price']."</td>";
 		echo "<td>".$res['beta']."</td>";
@@ -76,6 +75,7 @@ $result = mysqli_query($mysqli, "SELECT company.id_company, company.name_company
 		echo "<td>".$res['eps']."</td>";
 		echo "<td>".$res['new_debt_issued']."</td>";
 		echo "<td>".$res['debt_repayment']."</td>";
+		//Membuat tombol untuk edit dan delete dengan memasukkan parameter yang dibutuhkan, yaitu ID
 		echo "<td><a href=\"edit.php?id=$res[id_company]\">Edit</a> | <a href=\"delete.php?id=$res[id_company]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
 	}
 	?>

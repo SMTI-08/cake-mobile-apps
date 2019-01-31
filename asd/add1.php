@@ -5,10 +5,11 @@
 
 <body>
 <?php
-//including the database connection file
 include_once("config.php");
 
+//Jika berasal dari tombol Submit yang ada di form Add
 if(isset($_POST['Submit'])) {	
+	//Variabel diisi dengan data yang telah diinput di masing-masing field
 	$company_code = mysqli_real_escape_string($mysqli, $_POST['company_code']);
 	$company_name = mysqli_real_escape_string($mysqli, $_POST['company_name']);
 	$company_description = mysqli_real_escape_string($mysqli, $_POST['company_description']);
@@ -36,9 +37,10 @@ if(isset($_POST['Submit'])) {
 	$new_debt = mysqli_real_escape_string($mysqli, $_POST['new_debt']);
 	$debt_repayment = mysqli_real_escape_string($mysqli, $_POST['debt_repayment']);
 		
-	// checking empty fields
+	//Jika terdapat field yang tidak diisi
 	if(!isset($company_code) || !isset($company_name) || !isset($company_description) || !isset($sector) || !isset($logo) || !isset($last_price) || !isset($beta) || !isset($dollar) || !isset($assets_1) || !isset($assets_2) || !isset($liabilities_1) || !isset($liabilities_2) || !isset($outstanding) || !isset($equity) || !isset($net_income) || !isset($capital_expenditure) || !isset($depreciation) || !isset($dividend) || !isset($total_liabilities) || !isset($interest_expense) || !isset($ebit) || !isset($eps) || !isset($new_debt) || !isset($debt_repayment)) {
 				
+		//Penanganan error masing-masing field
 		if(!isset($company_code)) {
 			echo "<font color='red'>id_company field is empty.</font><br/>";
 		}
@@ -135,24 +137,26 @@ if(isset($_POST['Submit'])) {
 			echo "<font color='red'>debt_repayment field is empty.</font><br/>";
 		}
 		
-		//link to the previous page
+		//Tombol kembali jika terdapat field yang tidak diisi
 		echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
 	} else { 
-		// if all the fields are filled (not empty) 
+		//Jika semua field telah diisi
 			
-		//insert data to database	
+		//Kueri ke dalam database
 		$a = "INSERT INTO company (id_company,name_company,desc_company,image,stock_price,beta,using_dollar,current_asset1,current_asset2,current_l1,current_l2,outstanding_share,total_equity,net_income,capital_expenditure,depreciation,dividend_payment,total_l12,interest_expense,ebit,eps,new_debt_issued,debt_repayment,id_sector) VALUES('$company_code','$company_name','$company_description','$logo','$last_price','$beta','$dollar','$assets_1','$assets_2','$liabilities_1','$liabilities_2','$outstanding','$equity','$net_income','$capital_expenditure','$depreciation','$dividend','$total_liabilities','$interest_expense','$ebit','$eps','$new_debt','$debt_repayment','$sector')";
 
-		$b = "INSERT INTO companyprint (id_company,name_company,desc_company,image,stock_price,beta,using_dollar,current_asset1,current_asset2,current_l1,current_l2,outstanding_share,total_equity,net_income,capital_expenditure,depreciation,dividend_payment,total_l12,interest_expense,ebit,eps,new_debt_issued,debt_repayment,id_sector) VALUES('$company_code','$company_name','$company_description','$logo','$last_price','$beta','$dollar','$assets_1','$assets_2','$liabilities_1','$liabilities_2','$outstanding','$equity','$net_income','$capital_expenditure','$depreciation','$dividend','$total_liabilities','$interest_expense','$ebit','$eps','$new_debt','$debt_repayment','$sector')";
+		//Kueri ke dalam tabel companyprint untuk 'memesan tempat' sehingga nanti ketika terjadi perhitungan sudah ada datanya dan tidak terjadi error "No Record"
+		$b = "INSERT INTO companyprint (id_company,name_company,desc_company,image,stock_price,beta,using_dollar,current_asset1,current_asset2,current_l1,current_l2,outstanding_share,total_equity,net_income,capital_expenditure,depreciation,dividend_payment,total_l12,interest_expense,ebit,eps,new_debt_issued,debt_repayment,id_sector,updated_using,updated_at) VALUES('$company_code','$company_name','$company_description','$logo','$last_price','$beta','$dollar','$assets_1','$assets_2','$liabilities_1','$liabilities_2','$outstanding','$equity','$net_income','$capital_expenditure','$depreciation','$dividend','$total_liabilities','$interest_expense','$ebit','$eps','$new_debt','$debt_repayment','$sector','','')";
 
+		//HARUS MEMASUKKAN LOGO KETIKA ADD COMPANY, jika logo berhasil diupload
 		if (move_uploaded_file($tmp, $path)) {
 			$result = mysqli_query($mysqli, $a);
 			$result = mysqli_query($mysqli, $b);
+			//Jika kueri berhasil dieksekusi
 			if($result){
-				//display success message
 				echo "<font color='green'>Data added successfully.";
 				echo "<br/><a href='index.php'>Back to Home</a>";
-			} else {
+			} else { //Jika gagal
 				echo $a."<br>";
 				printf("Errormessage: %s\n", $mysqli->error);
 			}
@@ -162,4 +166,3 @@ if(isset($_POST['Submit'])) {
 ?>
 </body>
 </html>
-	

@@ -7,8 +7,10 @@
 <?php
 include_once("config.php");
 
+//Jika berasal dari tombol update
 if(isset($_POST['update']))
 {	
+	//Variabel diisi dengan data yang telah diinput di masing-masing field
 	$id = $_POST['id'];
 	$id_company = mysqli_real_escape_string($mysqli, $_POST['company_code']);
 	$name_company = mysqli_real_escape_string($mysqli, $_POST['company_name']);
@@ -37,8 +39,7 @@ if(isset($_POST['update']))
 	$new_debt_issued = mysqli_real_escape_string($mysqli, $_POST['new_debt']);
 	$debt_repayment = mysqli_real_escape_string($mysqli, $_POST['debt_repayment']);
 	
-	// checking empty fields
-	if(!isset($id_company) || !isset($name_company) || !isset($desc_company) || !isset($id_sector) || !isset($image) || !isset($stock_price) || !isset($beta) || !isset($using_dollar) || !isset($current_asset1) || !isset($current_asset2) || !isset($current_l1) || !isset($current_l2) || !isset($outstanding_share) || !isset($total_equity) || !isset($net_income) || !isset($capital_expenditure) || !isset($depreciation) || !isset($dividend_payment) || !isset($total_l12) || !isset($interest_expense) || !isset($ebit) || !isset($eps) || !isset($new_debt_issued) || !isset($debt_repayment)) {
+	if(!isset($id_company) || !isset($name_company) || !isset($desc_company) || !isset($stock_price) || !isset($beta) || !isset($current_asset1) || !isset($current_asset2) || !isset($current_l1) || !isset($current_l2) || !isset($outstanding_share) || !isset($total_equity) || !isset($net_income) || !isset($capital_expenditure) || !isset($depreciation) || !isset($dividend_payment) || !isset($total_l12) || !isset($interest_expense) || !isset($ebit) || !isset($eps) || !isset($new_debt_issued) || !isset($debt_repayment)) {
 		
 		if(!isset($id_company)) {
 			echo "<font color='red'>id_company field is empty.</font><br/>";
@@ -52,24 +53,12 @@ if(isset($_POST['update']))
 			echo "<font color='red'>desc_company field is empty.</font><br/>";
 		}
 
-		if(!isset($id_sector)) {
-			echo "<font color='red'>id_sector field is empty.</font><br/>";
-		}
-
-		if(!isset($image)) {
-			echo "<font color='red'>image field is empty.</font><br/>";
-		}
-
 		if(!isset($stock_price)) {
 			echo "<font color='red'>stock_price field is empty.</font><br/>";
 		}
 
 		if(!isset($beta)) {
 			echo "<font color='red'>beta field is empty.</font><br/>";
-		}
-
-		if(!isset($using_dollar)) {
-			echo "<font color='red'>using_dollar field is empty.</font><br/>";
 		}
 
 		if(!isset($current_asset1)) {
@@ -136,14 +125,26 @@ if(isset($_POST['update']))
 			echo "<font color='red'>debt_repayment field is empty.</font><br/>";
 		}
 		
-		//link to the previous page
 		echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
-	} else {	
-		//updating the table
-		$a = "UPDATE company SET id_company='$id_company',name_company='$name_company',desc_company='$desc_company',image='$image',stock_price='$stock_price',beta='$beta',using_dollar='$using_dollar',current_asset1='$current_asset1',current_asset2='$current_asset2',current_l1='$current_l1',current_l2='$current_l2',outstanding_share='$outstanding_share',total_equity='$total_equity',net_income='$net_income',capital_expenditure='$capital_expenditure',depreciation='$depreciation',dividend_payment='$dividend_payment',total_l12='$total_l12',interest_expense='$interest_expense',ebit='$ebit',eps='$eps',new_debt_issued='$new_debt_issued',debt_repayment='$debt_repayment',id_sector='$id_sector' WHERE id_company='$id'";
-
-		if (move_uploaded_file($tmp, $path)) {
-			$result = mysqli_query($mysqli, $a);
+	} else {
+		//Untuk edit, boleh tidak memasukkan logo perusahaan. Jika memasukkan logo
+	    if(!empty($image)){
+	        //Kueri update, HANYA mengupdate table company karena perhitungan akan dilakukan oleh file update.php
+		    $a = "UPDATE company SET id_company='$id_company',name_company='$name_company',desc_company='$desc_company',image='$image',stock_price='$stock_price',beta='$beta',using_dollar='$using_dollar',current_asset1='$current_asset1',current_asset2='$current_asset2',current_l1='$current_l1',current_l2='$current_l2',outstanding_share='$outstanding_share',total_equity='$total_equity',net_income='$net_income',capital_expenditure='$capital_expenditure',depreciation='$depreciation',dividend_payment='$dividend_payment',total_l12='$total_l12',interest_expense='$interest_expense',ebit='$ebit',eps='$eps',new_debt_issued='$new_debt_issued',debt_repayment='$debt_repayment',id_sector='$id_sector' WHERE id_company='$id'";
+    		if (move_uploaded_file($tmp, $path)) {
+    			$result = mysqli_query($mysqli, $a);
+    			if($result){
+    				//display success message
+    				echo "<font color='green'>Data edited successfully.";
+    				echo "<br/><a href='index.php'>Back to Home</a>";
+    			} else {
+    				echo $a."<br>";
+    				printf("Errormessage: %s\n", $mysqli->error);
+    			}
+    		}
+	    } else { //Jika tidak memasukkan logo
+	        $a = "UPDATE company SET id_company='$id_company',name_company='$name_company',desc_company='$desc_company',stock_price='$stock_price',beta='$beta',using_dollar='$using_dollar',current_asset1='$current_asset1',current_asset2='$current_asset2',current_l1='$current_l1',current_l2='$current_l2',outstanding_share='$outstanding_share',total_equity='$total_equity',net_income='$net_income',capital_expenditure='$capital_expenditure',depreciation='$depreciation',dividend_payment='$dividend_payment',total_l12='$total_l12',interest_expense='$interest_expense',ebit='$ebit',eps='$eps',new_debt_issued='$new_debt_issued',debt_repayment='$debt_repayment',id_sector='$id_sector' WHERE id_company='$id'";
+	        $result = mysqli_query($mysqli, $a);
 			if($result){
 				//display success message
 				echo "<font color='green'>Data edited successfully.";
@@ -152,7 +153,7 @@ if(isset($_POST['update']))
 				echo $a."<br>";
 				printf("Errormessage: %s\n", $mysqli->error);
 			}
-		}
+	    }
 	}
 }
 ?>

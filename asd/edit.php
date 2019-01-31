@@ -1,15 +1,16 @@
 <?php
-// including the database connection file
 include_once("config.php");
 
-//getting id from url
+//Mendapatkan id data yang akan diedit dari halaman index.php
 $id = $_GET['id'];
 
-//selecting data associated with this particular id
+//Mendapatkan data yang akan diedit dari database, dari tabel company karena tabel company adalah tabel untuk inisialisasi data, setelah dihitung baru dipindahkan ke tabel companyprint
 $result = mysqli_query($mysqli, "SELECT * FROM company WHERE id_company='$id'");
 
+//Selama hasil kueri data tersebut
 while($res = mysqli_fetch_array($result))
 {
+	//Variabel diisi dengan data hasil kueri
 	$id_company = $res['id_company'];
 	$name_company = $res['name_company'];
 	$desc_company = $res['desc_company'];
@@ -49,6 +50,7 @@ while($res = mysqli_fetch_array($result))
 		<table border="0">
 			<tr> 
 				<td>Company Code</td>
+				<!--Mencetak hasil kueri ke dalam form-->
 				<td><input type="text" name="company_code" value="<?php echo $id_company; ?>"></td>
 			</tr>
 			<tr> 

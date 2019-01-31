@@ -1,4 +1,5 @@
 <?php
+//Konfigurasi koneksi database
 include_once("config.php");
 ?>
 <html>
@@ -10,6 +11,7 @@ include_once("config.php");
 	<a href="index.php">Home</a>
 	<br/><br/>
 
+	<!--Membuat form Add yang dieksekusi menggunakan file add1.php dengan method POST. Enctype berguna untuk menangani upload file-->
 	<form action="add1.php" method="post" name="form1" enctype="multipart/form-data">
 		<table width="25%" border="0">
 			<tr> 
@@ -27,6 +29,7 @@ include_once("config.php");
 			<tr> 
 				<td>Company Sector</td>
 				<td><select name="sector">
+				    <!--Memuat daftar sektor dari database-->
 					<?php
 						$sql = mysqli_query($mysqli, "SELECT * FROM sector");
 						while ($row = $sql->fetch_assoc()) {
@@ -126,4 +129,3 @@ include_once("config.php");
 	</form>
 </body>
 </html>
-
