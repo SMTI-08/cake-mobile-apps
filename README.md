@@ -40,6 +40,7 @@ CAKeApps Mobile merupakan sebuah aplikasi android yang memberikan informasi meng
 - [x] Diskusi dengan stakeholder (dokumentasi MoM 2)
 - [x] Implementasi dan Koding
 - [x] Dokumentasi Fungsi dan User Manual
+- [x] Testing dan Evaluasi
 
 #Timeline Schedule
 
@@ -59,4 +60,5 @@ Timeline Project Plan dan Timeline Project Actual di file [Plan-Actual-Critical 
 
 Panduan penggunaan aplikasi terdapat di file [User Manual](https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/User%20Manual.pdf).
 
+Pengetahuan Informasi di file [Glosarium](https://github.com/SMTI-08/cake-mobile-apps/blob/master/dokumentasi/Glosarium.pdf).
 
